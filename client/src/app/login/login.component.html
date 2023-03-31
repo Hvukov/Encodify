@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <h1>Login</h1>
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+          </div>
+
+
+        <div class="form-group">
+          <label for="password">Enter your password</label>
+          <div class="input-group">
+            <input [type]="changeType? 'password':'text'" id="password" name="password" ngModel required minlength="6" class="form-control" required pattern=".*\d+.*"  #password="ngModel" >
+            <span class="eyeicon" (click)="viewPassword()" [ngClass]="visible? 'fa fa-eye':'fa fa-eye-slash'"></span>
+          </div>
+        </div>
+    <p class="error-message" *ngIf="password.invalid && password.touched">
+      Password must contain at least one number and at least 5 characters.</p>
+
+</div>
+
+
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+

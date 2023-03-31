@@ -1,0 +1,23 @@
+.container {
+margin-top:30px;
+background-color: #ffffff;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+input.ng-invalid.ng-touched {
+border:1px solid red;
+}
+
+.form-group {
+position: relative;}
+
+.eyeicon {
+ position: absolute;
+ right:10px;
+ top:10px
+}
+
+button {
+margin-top:20px}
